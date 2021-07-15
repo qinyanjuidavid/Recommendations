@@ -1,5 +1,5 @@
-from django.db import models
 from django.contrib.auth.models import User
+from django.db import models
 
 from Profiles.utils import generate_ref_code
 
@@ -20,7 +20,12 @@ class Profile(models.Model):
         return f"{self.user.username}- {self.code}"
 
     def get_recommended_profiles(self):
-        pass
+        qs = Profile.objects.all()
+        my_recs = []
+        for profile in qs:
+            if profile.recommended_by == self.user:
+                my_recs.append(profile)
+        return my_recs
 
     def save(self, *args, **kwargs):
         if self.code == "":

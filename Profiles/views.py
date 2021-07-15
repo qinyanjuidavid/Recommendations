@@ -25,10 +25,10 @@ def SignupView(request):
                 registered_profile.save()
             else:
                 form.save()
-            username=form.cleaned_data.get('username')
-            password=form.cleaned_data.get('password1')
-            user=authenticate(username=username,password=password)
-            login(request,user)
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=password)
+            login(request, user)
             return HttpResponseRedirect('/home/')
     context = {
         'form': form
