@@ -6,4 +6,4 @@ from Profiles.models import Profile
 # Register your models here.
 @admin.register(Profile)
 class MyAdmin(admin.ModelAdmin):
-    list_display = ("code",)
+    pass

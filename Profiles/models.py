@@ -1,5 +1,5 @@
-from django.contrib.auth.models import User
 from django.db import models
+from django.contrib.auth.models import User
 
 from Profiles.utils import generate_ref_code
 
@@ -9,7 +9,7 @@ from Profiles.utils import generate_ref_code
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(blank=True)
-    code = models.CharField(max_length=12, blank=True, null=True)
+    code = models.CharField(max_length=12, blank=True)
     recommended_by = models.ForeignKey(
         User, on_delete=models.CASCADE,
         blank=True, null=True, related_name="ref_by")

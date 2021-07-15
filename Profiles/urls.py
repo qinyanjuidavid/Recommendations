@@ -1,8 +1,10 @@
 from django.urls import path
+
 from Profiles import views
 
-app_name="Profiles"
+app_name = "Profiles"
 
-urlpatterns=[
-    
+urlpatterns = [
+    path('', views.main_view, name="main"),
+    path('<ref_code>/', views.main_view, name="main"),
 ]
