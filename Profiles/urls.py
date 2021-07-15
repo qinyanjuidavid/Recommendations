@@ -6,5 +6,6 @@ app_name = "Profiles"
 
 urlpatterns = [
     path('', views.mainView, name="main"),
-    path('<ref_code>/', views.mainView, name="main"),
+    # path('<ref_code>/', views.mainView, name="main"),
+    path('signup/', views.SignupView, name="signUp"),
 ]
