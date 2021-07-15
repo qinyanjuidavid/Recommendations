@@ -5,6 +5,6 @@ from Profiles import views
 app_name = "Profiles"
 
 urlpatterns = [
-    path('', views.main_view, name="main"),
-    path('<ref_code>/', views.main_view, name="main"),
+    path('', views.mainView, name="main"),
+    path('<ref_code>/', views.mainView, name="main"),
 ]

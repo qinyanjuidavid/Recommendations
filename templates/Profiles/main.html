@@ -1,7 +1,12 @@
-{%extends 'Projects/base.html'%}
+{%extends 'Profiles/base.html'%}
 {% block title%}
 Home
 {%endblock%}
 {%block content%}
+{%if request.user.is_authenticated%}
+{{request.user}}
+{%else%}
+<a href=""><button class="btn btn-outline-primary">Sign Up</button></a>
+{%endif%}
 
 {%endblock%}
